@@ -18,5 +18,5 @@ def acumulador(numero):
     return total
 print(f"La suma acumulada desde {numero} hasta 0 es {acumulador(numero)}")
 
-print("hola mundo")
+print("hola mundo prueba")
 
