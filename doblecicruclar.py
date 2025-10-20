@@ -7,16 +7,15 @@ class NodoDoble:
 
 class ListaDoble:
     def __init__(self):
-        # puntero al primer nodo de la lista
-        self.cabeza = None
-        # puntero al último nodo de la lista
-        self.cola = None
-        # Contador de nodos 
-        self.cont = 0
+        self.cabeza = None          # puntero al primer nodo de la lista
+        self.cola = None         # puntero al último nodo de la lista
+
+        self.cont = 0        # Contador de nodos 
+
 
     def agregar(self, dato):
-        # Crea un nuevo nodo con el dato recibido
-        nuevo = NodoDoble(dato)
+        nuevo = NodoDoble(dato)   # Crea un nuevo nodo con el dato recibido
+
         # Si la lista está vacía (no hay cabeza)
         if not self.cabeza:
             # El nuevo nodo pasa a ser la cabeza
@@ -36,34 +35,29 @@ class ListaDoble:
         self.cola.siguiente = self.cabeza
         # observamos la circularidad, la anterior de la cabeza apunta a la cola
         self.cabeza.anterior = self.cola
-        # Incrementa el contador de nodos porque se agregó uno nuevo
-        self.cont += 1
+        self.cont += 1  # Incrementa el contador de nodos porque se agregó uno nuevo
 
     def adelante(self):
-        # Comenzamos a recorrer desde la cabeza
         actual = self.cabeza
         i = 0
         # Recorremos mientras exista nodo y no hayamos mostrado todos (evita bucle infinito)
         while actual and i < self.cont:
-            # Imprime el dato del nodo actual
             print(actual.dato)
-            # Avanza al siguiente nodo
-            actual = actual.siguiente
-            # Incrementa el índice del recorrido
+            actual = actual.siguiente # Avanza al siguiente nodo
+
             i += 1
 
     def atras(self):
-        # Comenzamos a recorrer desde la cola (recorrido inverso)
+        # Comenzamos a recorrer desde la cola 
         actual = self.cola
         i = 0
         # Recorremos mientras exista nodo y no hayamos mostrado todos (evita bucle infinito)
         while actual and i < self.cont:
-            # Imprime el dato del nodo actual (desde atrás hacia adelante)
             print(actual.dato)
-            # Retrocede al nodo anterior
-            actual = actual.anterior
-            # Incrementa el índice del recorrido
-            i += 1
+           
+            actual = actual.anterior  # Retrocede al nodo anterior
+            i += 1       # Incrementa el índice del recorrido
+
 
 
 l1 = ListaDoble()
